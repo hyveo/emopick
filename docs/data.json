@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-14 18:47 KST",
+  "generated_at": "2026-07-14 19:03 KST",
   "weekly": [
     {
       "브랜드명": "카카오 이모티콘샵",
@@ -10,7 +10,8 @@
       "마감일": "2026-07-16",
       "상태": "진행중",
       "상단고정": true,
-      "링크": "https://e.kakao.com/weekly_event",
+      "링크": "https://e.kakao.com/event?s=2hDVqA",
+      "배너이미지": "assets/report/weekly-monday-free.png",
       "참조링크": "https://pf.kakao.com/_IcxhSz",
       "최초수집일": "2026-07-14"
     }
@@ -39,6 +40,7 @@
       "상태": "이번주 신규",
       "링크": "https://pf.kakao.com/_gDpbC/113913063",
       "참조링크": "https://emoticonews.tistory.com/3687",
+      "블로그링크": "https://hnclover.tistory.com/1117",
       "프로필이미지": "assets/kakao-channel-profiles/_gDpbC.jpg",
       "최초수집일": "2026-07-14"
     },
