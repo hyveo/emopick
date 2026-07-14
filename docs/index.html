@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>카카오톡 무료 이모티콘 주간 리포트</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @font-face {
+    font-family: 'Mona12';
+    src: url('./fonts/Mona12.woff2') format('woff2');
+    font-weight: 400;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'Mona12';
+    src: url('./fonts/Mona12-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: block;
+  }
+  :root {
+    --kakao-yellow: #FEE500;
+    --ink: #EAEAF2;
+    --bg: #14141F;
+    --panel: #1E1E2E;
+    --line: #4A4A62;
+  }
+  * {
+    box-sizing: border-box;
+    image-rendering: pixelated;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: never;
+    text-rendering: optimizeSpeed;
+  }
+  /* Mona12 는 12px(또는 12의 배수)에서만 도트가 깨지지 않습니다. 모든 텍스트는 12px/24px 고정. */
+  body {
+    font-family: 'Mona12', monospace;
+    font-size: 12px;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 16px 60px;
+    color: var(--ink);
+    background:
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 4px),
+      var(--bg);
+  }
+  header { text-align: center; padding: 48px 0 24px; }
+  .balloon {
+    display: inline-block;
+    background: var(--kakao-yellow);
+    color: #14141F;
+    padding: 16px 24px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.6;
+    box-shadow: 6px 6px 0 #00000055;
+    border: 3px solid #14141F;
+    clip-path: polygon(0 8px, 8px 8px, 8px 0, calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px));
+    position: relative;
+    animation: pop-in 0.5s steps(6, end) both;
+  }
+  @keyframes pop-in {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  @keyframes converge {
+    0% { transform: translate(var(--ix, 0), var(--iy, -40px)); opacity: 0; }
+    100% { transform: translate(0, 0); opacity: 1; }
+  }
+  h2 { animation: converge 0.4s steps(5, end) both; }
+  .card-grid .card:nth-child(6n+1) { --ix: -60px; --iy: -30px; }
+  .card-grid .card:nth-child(6n+2) { --ix: 60px; --iy: -30px; }
+  .card-grid .card:nth-child(6n+3) { --ix: -40px; --iy: 30px; }
+  .card-grid .card:nth-child(6n+4) { --ix: 40px; --iy: 30px; }
+  .card-grid .card:nth-child(6n+5) { --ix: -50px; --iy: 0; }
+  .card-grid .card:nth-child(6n+6) { --ix: 50px; --iy: 0; }
+  .card-grid .card:nth-child(1) { animation-delay: 0.05s; }
+  .card-grid .card:nth-child(2) { animation-delay: 0.1s; }
+  .card-grid .card:nth-child(3) { animation-delay: 0.15s; }
+  .card-grid .card:nth-child(4) { animation-delay: 0.2s; }
+  .card-grid .card:nth-child(5) { animation-delay: 0.25s; }
+  .card-grid .card:nth-child(n+6) { animation-delay: 0.3s; }
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-8deg); }
+    75% { transform: rotate(8deg); }
+  }
+  @keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  .meta { color: #8888A8; font-size: 12px; margin-top: 22px; }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 40px 0 16px;
+    padding-left: 10px;
+    border-left: 6px solid var(--kakao-yellow);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--panel);
+    border: 3px solid var(--line);
+    padding: 14px 16px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 4px 4px 0 #00000066;
+    transition: transform 0.1s steps(2, end), box-shadow 0.1s steps(2, end), border-color 0.15s ease;
+    animation: converge 0.4s steps(6, end) both;
+  }
+  .card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 7px 7px 0 #00000066;
+    border-color: var(--kakao-yellow);
+  }
+  .card:active { transform: translate(0, 0); box-shadow: 2px 2px 0 #00000066; }
+  .card:hover .card-emoji { animation: wiggle 0.4s steps(4, end); }
+  .card:hover .card-arrow { transform: translate(2px, -2px); color: var(--kakao-yellow); }
+  .card-emoji {
+    font-size: 24px;
+    flex-shrink: 0;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg);
+    border: 2px solid var(--line);
+  }
+  .card-body { flex: 1; min-width: 0; }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .brand { font-size: 12px; }
+  .badge {
+    font-size: 12px;
+    padding: 3px 8px;
+    border: 2px solid currentColor;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .badge.urgent { animation: pulse-badge 0.8s steps(4, end) infinite; }
+  .emoticon { font-size: 12px; margin-top: 4px; color: #B8B8D4; }
+  .meta-row { font-size: 12px; color: #7A7A9A; margin-top: 6px; }
+  .card-arrow { font-size: 12px; color: var(--line); transition: transform 0.15s ease, color 0.15s ease; }
+  .empty { color: #6A6A88; font-size: 12px; }
+  footer {
+    text-align: center;
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 3px dashed var(--line);
+    font-size: 12px;
+    color: #7A7A9A;
+  }
+  footer .copyright { margin-top: 8px; font-size: 12px; color: #55556E; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="balloon">■ 카카오톡 무료 이모티콘 주간 리포트 ■</div>
+    <p class="meta">LAST UPDATE · 2026-07-14 09:28 KST</p>
+  </header>
+
+  <h2>⏰ 마감 임박</h2>
+  <p class="empty">해당 없음, 다음 주에 또 만나요 🙌</p>
+
+  <h2>🔥 진행중</h2>
+  <div class="card-grid">
+      <a class="card" href="https://pf.kakao.com/_example" target="_blank">
+        <div class="card-emoji">✨</div>
+        <div class="card-body">
+          <div class="card-top">
+            <span class="brand">예시브랜드</span>
+            <span class="badge" style="color:#3BB273; background:#EAFBF1;">진행중</span>
+          </div>
+          <div class="emoticon">예시 이모티콘</div>
+          <div class="meta-row">예시 · 2026-07-01 ~ 2026-07-31</div>
+        </div>
+        <div class="card-arrow">↗</div>
+      </a></div>
+
+  <h2>📅 예정</h2>
+  <p class="empty">해당 없음, 다음 주에 또 만나요 🙌</p>
+
+  <footer>
+    매주 갱신됩니다 · 카카오톡 채널 추가하고 무료 이모티콘 받아가세요
+    <div class="copyright">© 2026 hyveo. All rights reserved.</div>
+  </footer>
+</body>
+</html>
